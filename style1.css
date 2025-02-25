@@ -90,6 +90,11 @@
     gap: 0.5rem;
     margin: 10px 0px;
   }
+
+  .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
   
   .logo h1,
   .logo h1 span {

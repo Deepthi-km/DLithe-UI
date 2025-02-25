@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#ffffff" />
     <title>News Grid | Home</title>
     <link rel="stylesheet" href="style1.css" />
+    <script defer src="script.js"></script> <!-- External JavaScript -->
 </head>
 
 <body>
@@ -16,10 +17,10 @@
                 <i class="fas fa-globe fa-3x"></i>
                 <h1>News<span>Grid</span></h1>
             </div>
-
             <div class="options">
                 <a href="./index.html" class="current">Home</a>
                 <a href="./html/about.html">About</a>
+                <button id="theme-toggle">🌙 Dark Mode</button>
             </div>
         </div>
     </nav>
@@ -27,14 +28,9 @@
     <header class="showcase">
         <div class="container">
             <div class="text-content">
-                <p class="sports-category">sports</p>
-                <h1>some sports article</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                    temporibus nesciunt in aut facilis optio eum, et nisi obcaecati
-                    accusamus reprehenderit iste facere nobis, qui eaque totam,
-                    laboriosam sequi animi?
-                </p>
+                <p class="sports-category">Sports</p>
+                <h1>Some sports article</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <a href="./html/article.html">Read More</a>
             </div>
         </div>
@@ -43,94 +39,40 @@
     <section>
         <div class="container">
             <h1 class="editor-h1">Editor Picks</h1>
+            <div>
+                <label for="filter">Filter by category:</label>
+                <select id="filter">
+                    <option value="all">All</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                    <option value="entertainment">Entertainment</option>
+                </select>
+            </div>
             <div class="articles">
-                <a href="./html/article.html" class="card">
+                <a href="./html/article.html" class="card" data-category="entertainment">
                     <img src="./images/articles/ent1.jpg" alt="" />
                     <article>
                         <p class="entertainment-category">Entertainment</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
+                        <h1>Entertainment Headline</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </article>
                 </a>
 
-                <a href="./html/article.html" class="card">
+                <a href="./html/article.html" class="card" data-category="sports">
                     <article>
                         <p class="sports-category">Sports</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
+                        <h1>Sports Headline</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </article>
                 </a>
 
-                <a href="./html/article.html" class="card">
+                <a href="./html/article.html" class="card" data-category="technology">
                     <img src="./images/articles/tech1.jpg" alt="" />
                     <article>
                         <p class="technology-category">Technology</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
+                        <h1>Technology Headline</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </article>
-                </a>
-
-                <a href="./html/article.html" class="card">
-                    <article>
-                        <p class="sports-category">Sports</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
-                    </article>
-                    <img src="./images/articles/sports1.jpg" alt="" />
-                </a>
-
-                <a href="./html/article.html" class="card">
-                    <img src="./images/articles/tech2.jpg" alt="" />
-                    <article>
-                        <p class="technology-category">Technology</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
-                    </article>
-                </a>
-
-                <a href="./html/article.html" class="card">
-                    <article>
-                        <p class="sports-category">Sports</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
-                    </article>
-                </a>
-
-                <a href="./html/article.html" class="card">
-                    <article>
-                        <p class="entertainment-category">Entertainment</p>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
-                            nisi neque eum libero maiores voluptatem repudiandae quos
-                            perspiciatis, reiciendis dolor!
-                        </p>
-                    </article>
-                    <img src="./images/articles/ent2.jpg" alt="" />
                 </a>
             </div>
         </div>
@@ -144,14 +86,8 @@
                         <i class="fas fa-globe fa-2x"></i>
                         <h2>News<span>Grid</span></h2>
                     </div>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit
-                        deserunt assumenda enim non? Ratione ipsum voluptates fuga eos
-                        earum vitae.
-                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </article>
-
-
                 <article>
                     <h4>SITE LINKS</h4>
                     <p>Help & Support</p>
@@ -160,12 +96,46 @@
                     <p>Contact</p>
                 </article>
             </div>
-
             <div class="copyright">
                 <p>Copyright &copy; 2021, All Rights Reserved</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                themeToggle.textContent = "☀️ Light Mode";
+            } else {
+                themeToggle.textContent = "🌙 Dark Mode";
+            }
+        });
+
+        // Article Filtering
+        document.getElementById("filter").addEventListener("change", function () {
+            const category = this.value;
+            document.querySelectorAll(".card").forEach(card => {
+                if (category === "all" || card.dataset.category === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
